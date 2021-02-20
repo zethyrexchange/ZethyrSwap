@@ -1,0 +1,168 @@
+.dividends-page {
+    background: #E5E5E5;
+   	min-height: calc(100vh - 132px);
+    overflow-x: hidden;
+    padding-bottom: 16px;
+    .banner-top {
+	    background: url('./assets/images/head-banner.png') no-repeat center right;
+	    background-size: cover;
+	    padding: 60px;
+	    margin-bottom: 16px;
+	    h1 {
+	    	font-weight: bold;
+			font-size: 40px;
+			line-height: 56px;
+			color: #fff;
+			margin-bottom: 24px;
+	    }
+	    button.btn-outline-primary {
+	    	border-radius: 8px;
+	    	margin-right: 16px;
+	    	margin-bottom: 16px;
+	    	color: #7B9CF8;
+	    	border-color: #7B9CF8;
+	    	font-weight: 600;
+	    	&:hover {
+	    		color:#fff!important;	
+	    		border-color: #fff;
+	    	}
+	    }
+	    span {
+	    	font-weight: bold;
+			font-size: 14px;
+			line-height: 22px;
+			color: #fff;
+	    }
+	    ul {
+	    	margin-top: 14px;
+	    	padding-left: 0;
+	    	li::before {
+			  content: "•"; /* Insert content that looks like bullets */
+			  padding-right: 8px;
+			  color: #fff; /* Or a color you prefer */
+			}
+			li {
+				margin-bottom: 8px;
+				a {
+					font-weight: 500;
+					font-size: 13px;
+					line-height: 20px;
+					text-decoration: none;
+					color: #6F94F7;
+				}
+			}
+	    }
+	}
+	.content-dividends{
+      background: #FFF;
+      padding: 17px;
+      .info {
+      	text-align: center;
+      }
+      .time {
+      	margin-top: 5px;
+      	span.time-coudown {
+      		font-size: 19px;
+      	}
+      }
+      p {
+      	font-weight: 500;
+		font-size: 18px;
+		line-height: 30px;
+		color: #000;
+      }
+      h2 {
+      	font-size: 18px;
+		line-height: 30px;
+		font-weight: 700;
+      }
+      h3 {
+	    	font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+			color: #818292;
+			margin-bottom: 0px;
+	    }
+      .content {
+      	    display: flex;
+		    justify-content: center;
+      }
+      .dividends-left{
+	    float: left;
+	    width: 30%;
+	    padding: 0 35px;
+	    text-align: center;
+	    h3 {
+	    	font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+			color: #818292;
+			margin-bottom: 0px;
+	    }
+	  }
+	  .dividends-right{
+	    float: right;
+	    width: 30%;
+	    padding: 0 35px;
+	    text-align: center;
+	     h3 {
+	    	font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+			color: #818292;
+			margin-bottom: 0px;
+	    }
+	  }
+	  button.btn-primary {
+	  	border-radius: 8px;
+    	margin-right: 16px;
+    	margin-bottom: 16px;
+    	color: #7B9CF8;
+    	border-color: #7B9CF8;
+    	font-weight: 600;
+    	background: #fff;
+    	float: right;
+    	&:hover {
+    		color:#fff!important;	
+    		border-color: #fff;
+    		background: #7B9CF8;
+    	}
+	  }
+  	}
+}
+ .clearfix:after {
+      clear: both;
+      content: "";
+      display: block;
+  }
+ 
+  p{
+   text-align: center;
+   color: #919191;
+  }
+  button{
+    border-radius: 30px;
+  }
+  h6{
+    text-align: center;
+  }
+  .content-dividends-text{
+      padding: 43px;
+  }
+  h4{
+      font-weight: bold;
+  }
+  @media (max-width: 560px){
+  	.dividends-page .content-dividends .content {
+  		display: block!important;
+  	}
+  	.dividends-left {
+  		width: 100%!important;
+  	}
+  	.dividends-right {
+  		width: 100%!important;
+  	}
+  	.dividends-page .content-dividends button.btn-primary {
+  		float: inherit!important;
+  	}
+  }

@@ -1,0 +1,42 @@
+.footer-app{
+    background: #333333;
+    .footer-two{
+    	font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+		color: #FFFFFF;
+		padding: 8px 0;
+		border-top: 1px solid #4F4F4F;
+    }
+    
+    .navbar{
+  		padding: 6px 0;
+  		.navbar-mobile{
+  			order: 2;
+  		}
+  		.menu-footer{
+  			.nav-item{
+  				.nav-link{
+  					color: #fff;
+  					font-style: normal;
+					font-weight: 500;
+					font-size: 13px;
+					line-height: 16px;	  					
+  				}
+  				&:first-child{
+  					.nav-link{
+						padding-left: 0;
+					}
+				}
+  			}
+  		}
+	}
+	.social-footer{
+		.nav-item:last-child{
+			.nav-link{
+				padding-right: 0;
+			}
+		}
+	} 
+}

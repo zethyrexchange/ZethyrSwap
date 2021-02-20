@@ -1,0 +1,627 @@
+@media (max-width: 560px){
+	ul.menu-user {
+		margin-bottom: 16px!important;
+	}
+	.detail-assets .table-trading {
+		overflow: scroll;
+	}
+	.account-invite-page .account-invite-link {
+	    position: initial!important;
+	    display: block!important;
+	}
+	.account-invite-page .account-invite-link .invite-link {
+		font-size: 8px;
+	}
+	.account-invite-page .account-invite-link .invite-link-copy {
+		font-size: 8px!important;
+		right: -6px!important;
+	}
+	.account-invite-page .account-invite-link .invite-link-produce {
+		max-width: 100%!important;
+	}
+	.account-invite-page .account-invite-main .number {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+	.account-invite-page .account-invite-main .account-invite-col-item {
+		height: 130px;
+	}
+	.account-invite-main-content {
+		overflow: scroll;
+		table {
+			width: 548px;
+    		text-align: center;
+		}
+	}
+}
+.user-page {
+	background: #F2F2F2;
+	padding-top: 16px;
+	padding-bottom: 94px;
+	overflow: scroll;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	min-height: calc(100vh - 132px);
+}
+// ::-webkit-scrollbar {
+//   	width: 0px;
+// }
+ul.menu-user {
+	list-style: none;
+	padding-left: 0;
+	margin:0;
+	background: #fff;
+	li {
+		a {
+			text-decoration: none;
+			color: #000;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 22px;
+			padding: 13px 14px;
+			display: block;
+			img {
+				width: 18px;
+				height: 18px;
+				margin-right: 15px;
+			}
+		}
+		&:hover{
+			background: #6892FF;
+			a {
+				color:#fff;
+			}
+		}
+	}
+	li.active {
+		background: #6892FF;
+		a {
+			color:#fff;
+		}
+	}
+}
+.account {
+	background: #fff;
+	padding: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 16px;
+	.avatar {
+		width: 10%;
+		float: left;
+	}
+	.infor-account {
+		width: 100%;
+		float: left;
+		p {
+			margin: 0;
+			color:#333333;
+			a {
+				text-decoration: none;
+				color:#6892FF;
+			}
+		}
+		.introduce-header {
+		    padding: 20px 0;
+		    border-bottom: 1px solid #F2F2F2;
+		    padding-top: 5px;
+		    font-size: 18px;
+		}
+		.introduce-content {
+			font-size: 14px;
+			line-height: 22px;
+			padding-top: 16px;
+		}
+	}
+}
+.detail-assets {
+	background: #fff;
+	padding: 16px;
+	.progress {
+		height: 24px;
+		margin-top: 10px;
+		border-radius: 0;
+		.progress-bar {
+			background-color: #4B7DFD;
+		}
+	}
+	.value {
+	    margin-bottom: 32px;
+    	padding: 20px 0;
+    	border-bottom: 1px solid #F2F2F2;
+	    padding-top: 5px;
+		p {
+			margin:0;
+			width: 50%;
+			float: left;
+		}
+		p.number-value {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 22px;
+			span.number {
+				color: #6892FF;
+			}
+		}
+		p.record {
+			text-align: right;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 22px;
+			color:#6892FF;
+		}
+	}
+	.trading {
+		border-bottom: 1px solid #F2F2F2;
+	    padding-bottom: 20px;
+		.item {
+			text-align: center;
+			border-right: 1px solid #F2F2F2;
+			p {
+				font-weight: 500;
+				font-size: 13px;
+				line-height: 20px;
+				color: #828282;
+			}
+			h4 {
+				font-weight: 500;
+				font-size: 32px;
+				line-height: 39px;
+				color: #333333;
+			}
+			button {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 17px;
+			}
+			button.unlock {
+				background: transparent;
+				color: #2AA8A7;
+				border-color: transparent;
+			}
+		}
+	}
+	.table-trading {
+		border-top: 1px solid #F2F2F2 ;
+		table {
+			tr {
+				th {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#828282;
+					padding: 10px;
+				}
+				td {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#333333;
+					padding: 10px;
+				}
+				td.click-unlock {
+					color: #6892FF;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+.cursor {
+	cursor: pointer;
+}
+.trade-detail-page {
+	background: #fff;
+	.table-trading {
+		padding-top: 3px!important;
+		table tr th {
+			box-shadow: none!important;
+		}
+	}
+	.panigate {
+		margin-top: 0 !important;
+		padding-top: 32px;
+		background: #F2F2F2;
+	}
+	ul.tab-menu {
+	    padding: 22px 0;
+	    list-style: none;
+	    margin: 0;
+		li {
+			float: left;
+			cursor: pointer;
+			a {
+				text-decoration: none;
+				padding: 21px 16px;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 20px;
+				color:#828282;
+				span.total-open-order {
+					display: none;
+				}
+			}
+			a:hover{
+				color: #333333;
+				border-bottom: 4px solid #6892FF;
+			}
+			
+		}
+		li.active {
+				a{
+					color: #6892FF;
+					background: #fff;
+					border-bottom: 4px solid #6892FF!important;
+				}
+			}
+	}
+	.check-box-hide {
+		display: none;
+	}
+	.table-trading {
+		border-top: 1px solid #F2F2F2 ;
+		padding: 16px;
+		table {
+			tr {
+				th {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#828282;
+					padding: 10px;
+				}
+				td {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#333333;
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
+.trade-detail-components {
+	overflow: scroll;
+	ul.tab-menu {
+	    padding: 10px 0;
+	    list-style: none;
+	    margin: 0;
+	    position: relative;
+		li {
+			float: left;
+			cursor: pointer;
+			a {
+				text-decoration: none;
+				padding: 11px 16px;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 20px;
+				color:#828282;
+				span.total-open-order {
+					color: #fff;
+					background: #6892FF;
+					border-radius: 50%;
+					font-weight: 700;
+				    padding: 2px 7px;
+				}
+			}
+			a:hover{
+				color: #6892FF;
+				background: #fff;
+			}
+			
+		}
+		li.active {
+			a{
+				color: #6892FF;
+				background: #fff;
+			}
+		}
+	}
+	.check-box-hide {
+		position: absolute;
+		right: 9px;
+		top: 11px;
+	}
+	.hide-pair {
+	  position: relative;
+	  padding-left: 25px;
+	  margin-bottom: 12px;
+	  cursor: pointer;
+	  font-weight: 500;
+	  font-size: 14px;
+	  color: #333333;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+	/* Hide the browser's default checkbox */
+	.hide-pair input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	  height: 0;
+	  width: 0;
+	}
+
+	/* Create a custom checkbox */
+	.checkmark {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 18px;
+	  width: 18px;
+	  background-color: #fff;
+      border-radius: 2px;
+	}
+
+	/* On mouse-over, add a grey background color */
+	.hide-pair:hover input ~ .checkmark {
+	  background-color: #ccc;
+	}
+
+	/* When the checkbox is checked, add a blue background */
+	.hide-pair input:checked ~ .checkmark {
+	  background-color: #6892FF;
+	}
+
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	}
+
+	/* Show the checkmark when checked */
+	.hide-pair input:checked ~ .checkmark:after {
+	  display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	.hide-pair .checkmark:after {
+	  left: 7px;
+	  top: 3px;
+	  width: 5px;
+	  height: 10px;
+	  border: solid white;
+	  border-width: 0 3px 3px 0;
+	  -webkit-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+	.table-trading {
+		border-top: 1px solid #F2F2F2 ;
+		padding: 0px 16px;
+		background: #fff;
+		table {
+			border-collapse: collapse;
+    		width: 100%;
+			tr {
+				border-bottom: 1px solid #F2F2F2;
+				th {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#828282;
+					padding: 5px;
+					border-right: 1px solid #F2F2F2;
+					 position: sticky;
+					  z-index: 100;
+					  top: 0;
+					  background: #fff;
+			      box-shadow: inset 0 1px 0 #F2F2F2, inset 0 -1px 0 #F2F2F2;
+				}
+				th:last-child {
+					border-right: 0;
+				}
+				td {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 20px;
+					color:#333333;
+					padding: 10px;
+				}
+				td.click-unlock {
+					cursor: pointer;
+					color: #2AA8A7;
+				}
+			}
+			tr.cancel {
+				opacity: 0.4;
+			}
+		}
+	}
+}
+.setting-detail-page {
+	background: #fff;
+	.col-4 , .col-8 {
+		float: left;
+	}
+	.reset-pass {
+	    padding: 16px;
+	    border-bottom: 1px solid #F2F2F2;
+	    width: 100%;
+	    p {
+	    	margin:0;
+	    	font-weight: 500;
+			font-size: 16px;
+			line-height: 20px;
+			color: #333333;
+	    }
+	    .section-setting {
+	    	padding: 16px;
+    	    border-bottom: 1px solid #F2F2F2;
+	    	img {
+    		    background: #F2F2F2;
+			    padding: 10px;
+			    border-radius: 4px;
+			    width: 8%;
+			    float:left;
+			    margin-right: 16px;
+	    	}
+	    	p {
+	    		font-size: 14px;
+	    	}
+	    	span {
+	    		font-weight: 500;
+				font-size: 14px;
+				line-height: 22px;
+				color:#828282;
+	    	}
+	    	button {
+    		    margin-left: 5px;
+	    	}
+	    }
+	}
+	button {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		width: 148px;
+		height: 32px;
+		left: 0px;
+		top: 0px;
+		background: #6892FF;
+		-webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px;
+		border: 1px solid #6892FF;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		color: #FFFFFF;
+	}
+}
+.btn-lock {
+	width: 148px;
+	height: 32px;
+	left: 0px;
+	top: 0px;
+	background: #6892FF;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+	border: 1px solid #6892FF;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: #FFFFFF;
+}
+.account-invite-page{
+	.banner{
+		height: 256px;
+		background: url('./assets/images/exchange-1.png') no-repeat center right;
+		-webkit-background-size: cover;
+		   -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		h2{
+			font-size: 40px;
+			line-height: 49px;
+			font-family: 'Montserrat Alternates', sans-serif;
+			background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#BDEEEE));
+			background: -webkit-linear-gradient(top, #FFFFFF 0%, #BDEEEE 100%);
+			background: -moz-linear-gradient(top, #FFFFFF 0%, #BDEEEE 100%);
+			background: -o-linear-gradient(top, #FFFFFF 0%, #BDEEEE 100%);
+			background: linear-gradient(to bottom, #FFFFFF 0%, #BDEEEE 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			font-weight: 800;
+		}
+		h3{
+			font-size: 24px;
+			line-height: 29px;
+			text-align: center;
+			color: #FFFFFF;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			font-family: 'Montserrat Alternates', sans-serif;
+		}
+	}
+	.account-invite-body{
+		position: relative;
+	}
+	.account-invite-link{
+		position: absolute;
+		top: -20px;
+		left: 40px;
+		right: 40px;
+		z-index: 9;
+		.invite-link-group{
+			position: relative;
+		}
+		.invite-link{
+			height: 40px;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+			background: #FFFFFF;
+			border-radius: 4px;
+			padding-right: 50px;
+		}
+		.invite-link-copy{
+			background: none;
+			border: 0;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 17px;
+			color: #2AA8A7;
+			position: absolute;
+			right: 10px;
+			top: 5px;
+		}
+		.invite-link-produce{
+			height: 40px;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 17px;
+			color: #FFFFFF;
+			background: #6892FF;
+			max-width: 188px;
+			border: 1px solid transparent;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+		}
+	}
+	.account-invite-main{
+		padding: 60px 0 50px;
+		background: #fff;
+		.title{
+			font-weight: 500;
+			font-size: 13px;
+			line-height: 20px;
+			color: #828282;
+		}
+		.number{
+			font-weight: 500;
+			font-size: 32px;
+			line-height: 39px;
+			color: #333333;
+		}
+		.name{
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 17px;
+			color: #333333;
+		}
+		.account-invite-col-item{
+			border-right: 1px solid #F2F2F2;
+			&:last-child{
+				border-right: 0;
+			}
+		}
+	}
+}
+.table-main-content {
+	overflow: scroll;
+}

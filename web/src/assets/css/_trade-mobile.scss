@@ -1,0 +1,172 @@
+.trade-mobile {
+	ul.tab-menu {
+		padding-left: 0;
+		list-style: none;
+		li {
+			width: 33%;
+			float: left;
+			text-align: center;
+			height: 42px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+			a {
+			    line-height: 1.75rem;
+			    font-size: 0.8rem;
+			}
+		}
+		li.active {
+			border-bottom: 2px solid #333A65;
+			a {
+				color: #333A65;
+			}
+		}
+	}
+	.trade-content {
+		.charts-tabs {
+			.trade-page {
+				.exchange-content-top-item {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.buy-sell-btn {
+			position: fixed;
+			bottom: 0;
+			padding: 0.375rem 0.6rem;
+			width: 100%;
+			background: #333A65;
+			button {
+				display: inline-block;
+			    width: 48%;
+			    height: 1.75rem;
+			    text-align: center;
+			    line-height: 1.75rem;
+			    border-radius: 0.075rem;
+			    font-size: 0.75rem;
+			    color: #fff;
+			    height: 35px;
+		        border: 0;
+			}
+			button.buy {
+    	    	background: #27AE60;
+				float: left;
+		    }
+		    button.sell {
+	    	    background: #fff;
+				float: right;
+				color: #007bff;
+		    }
+		}
+	}
+}
+.app-trade-mobile {
+	.footer {
+		display: none;
+	}
+	.trade-mobile {
+		.trade-detail-left {
+			width: 50%;
+			float: left;
+		}
+		.trade-detail-right {
+			width: 50%;
+			float: right;
+			text-align: right;
+			margin-top: 38px;
+		}
+		.exchange-left-side .exchange-left-side-up-down td:nth-child(2) {
+			font-size: 11px;
+			height: 10px;
+		}
+		.exchange-left-side .exchange-left-side-up-down td:nth-child(1) {
+			font-size: 11px;
+			height: 10px;
+		}
+		.my-open-orders {
+			padding-bottom: 35px;
+			.open-order {
+				padding: 10px;
+				background: #e3e3e3;
+				margin: 10px;
+				button.btn-lock {
+					width: 100%;
+					color: #333A65;
+					border-color:#333A65;
+					background: transparent;
+				}
+			}
+		}
+		.exchange-left-side-list {
+			height: 100px!important;
+			overflow: scroll;
+		}
+		.exchange-left-side-list .market-sell {
+			min-height: 170px;
+			max-height: 170px;
+		}
+		.exchange-left-side-list .market-buy {
+			min-height: 170px;
+			max-height: 170px;
+		}
+		.buy-sell-btc  {
+			padding-top: 0!important;
+			ul {
+			    display: flex;
+			    justify-content: center;
+				li {
+					width: 42%;
+				}
+			}
+		}
+		.exchange-mid-bottom .tab-content {
+			border:0;
+		}
+		.exchange-left-side .exchange-left-side-title {
+			border-bottom:0;
+		}
+		.exchange-left-side .exchange-left-side-title-up {
+			background: transparent!important;
+			margin-bottom: 0;
+			padding: 0;
+		}
+		.trade-current {
+			padding-left: 18px;
+		}
+		.exchange-mid-bottom .buy-sell-btc .input-group .input-group-text {
+			background: transparent!important;
+		}
+		.modal-dialog {
+			.market-label {
+				float: right;
+			}
+			.exchange-left-side td:last-child {
+				text-align: right;
+			}
+		}
+		.exchange-mid-bottom .buy-sell-btc .input-group .input-group-text {
+			background: transparent!important;
+		}
+		.exchange-mid-bottom .buy-sell-btc .input-group-coin .input-group-append {
+			right: 11px!important;
+		}
+		.exchange-left-side-list {
+			min-height: 500px;
+		}
+		.exchange-left-side-list .market-sell table {
+			overflow: inherit!important;
+		}
+		.exchange-left-side-list .scroll-table {
+			overflow: inherit!important;
+		}
+		.exchange-mid-bottom .buy-sell-btc label {
+			width: 100%;
+			span {
+				float: right;
+			}
+		}
+		.exchange-mid-bottom .buy-sell-btc .item {
+			margin-bottom: 20px!important;
+		}
+	}
+}

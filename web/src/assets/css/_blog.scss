@@ -1,0 +1,152 @@
+@media (max-width: 560px){
+	.blog-list-content .blog-container .item-blog .blog-image img {
+		width: 100%;
+	}
+	.blog-detail {
+		padding: 20px 5px!important;
+	}
+}
+.blog-page {
+	background: #E5E5E5;
+	padding-top: 30px;
+    height: 910px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.blog-banner {
+	/*background: url('./assets/images/trade-banner.png') no-repeat center right;
+    background-size: cover;
+    padding: 30px 0 55px;
+    height: 250px;
+    color: #fff;
+    text-align: center;*/
+    h1 {
+    	text-align: center;
+    }
+    .title a {
+	    font-style: normal;
+	    font-weight: bold;
+	    font-size: 40px;
+	    line-height: 49px;
+	    color: #6892FF;
+    }
+    .desc {
+    	font-style: normal;
+	    font-weight: 500;
+	    font-size: 15px;
+	    line-height: 24px;
+	    color: #FFFFFF;
+    }
+}
+.blog-detail-page {
+	background: #E5E5E5;
+}
+.blog-list-content {
+	margin-bottom: 16px;
+	.blog-container {
+		background: transparent;
+		margin-top: 30px!important;
+		.item-blog {
+			background: #fff;
+			margin-bottom: 16px;
+			cursor: pointer;
+			.blog-image {
+			    height: 204px;
+			    img {
+			    	height: 100%;
+			    }
+			}
+			.blog-info {
+				padding:16px;
+				.mt-3 {
+					margin:0!important;
+					margin-bottom: 4px!important;
+				}
+				.blog-except {
+					font-weight: 600;
+					font-size: 14px;
+					line-height: 22px;
+					overflow: hidden;
+				    text-overflow: ellipsis;
+				    line-height: 25px;
+				    -webkit-line-clamp: 3;
+				    height: 75px;
+				    display: -webkit-box;
+				    -webkit-box-orient: vertical;
+				}
+				.blog-date {
+					font-weight: 500;
+					font-size: 13px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}   
+.blog-detail {
+	padding: 30px;
+	.blog-detail-left {
+		padding: 16px 32px;
+		background: #fff;
+		.blog-info {
+			h4 {
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 28px;
+				margin-bottom: 8px;
+			}
+			p.date-time {
+				font-weight: 500;
+				font-size: 13px;
+				line-height: 20px;
+				color: #828282;
+				margin-bottom: 8px;
+			}
+			p {
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 22px;
+				color: #333333;
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.blog-detail-right {
+		h3 {
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 22px;
+			color: #333333;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    line-height: 25px;
+		    -webkit-line-clamp: 3;
+		    height: 75px;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		}
+		.blog-date {
+			font-weight: 500;
+			font-size: 13px;
+			line-height: 20px;
+			color: #828282;
+		}
+		.blog-info {
+			background: #fff;
+			padding: 16px;
+		}
+		.mt-3 {
+			margin:0!important;
+		}
+		.item-blog {
+			margin-bottom: 16px;
+			.blog-image {
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

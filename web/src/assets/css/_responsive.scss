@@ -1,0 +1,283 @@
+
+@media (min-width: 1200px){
+	.container{
+		max-width: 1170px;
+	}
+}
+@media (max-width: 1200px){
+	.swap_order_list .swap_order_list_item{
+		overflow-x: auto;
+	}
+}
+@media (max-width: 991px){
+	.home-ztr{
+		.container{
+			padding: 0 15px;
+		}
+	}
+	.market-hot .row-exchange .exchange-top-item {
+		min-width: 50%;
+		max-width: 50%;
+	}
+}
+@media (max-width: 768px){
+	.header-app{
+		.navbar{
+			.navbar-nav{
+				.nav-item{
+					width: 100%;
+				}
+			}
+		} 
+	}
+	.footer-app{
+		.navbar{
+			#nav-collapse-footer {
+				order: 2;
+			}
+		}
+		.navbar-mobile{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			.social-footer{
+				a{
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+	.exchange-mid-top .exchange-mid-top-list{
+		display: block;
+		.button-left{
+			margin-bottom: 8px;
+		}
+		.button-right{
+			justify-content: flex-end;
+		}
+	}
+	.VueCarousel {
+		h3 {
+			img {
+				max-width: 15%!important;
+			}
+			img.logo {
+				max-width: 100%!important;
+			}
+			img.logo-1 {
+				margin-right: 0px!important;
+			}
+			img.logo-3 {
+			    margin-left: 0px!important;
+			}
+			img.logo-4 {
+				max-width: 35%!important;
+			}
+		}
+	}
+	.exchange-world {
+		margin-bottom: 16px;
+	}
+}
+@media (max-width: 1200px){
+	.information-eth{
+		.row-exchange{
+			.exchange-top-item{
+				min-width: 25%;
+				max-width: 25%;
+			}
+		}
+	}
+
+	.header-main {
+		position: inherit;
+	}
+	.content {
+		padding-top: 0;
+
+	}
+	.user-page {
+		padding-top: 16px;
+		ul.menu-user {
+			margin-bottom: 16px;
+		}
+	}
+	.exchange-world {
+		margin-bottom: 16px;
+	}
+}
+@media (max-width: 991px){
+	.information-eth{
+		.row-exchange{
+			.exchange-top-item{
+				min-width: 33.33%;
+				max-width: 33.33%;
+			}
+		}
+	}
+	.header-app .navbar .navbar-nav .nav-item .nav-link {
+		font-size: 9px;
+	}
+	.login-or-register span {
+		font-size: 9px;
+	}
+	.dividend-rating-content .tabel table th, .dividend-rating-content .tabel table td {
+	    padding: 5px 7px;
+   		font-size: 11px;
+	}
+	.user-page {
+		padding-top: 16px;
+		ul.menu-user {
+			margin-bottom: 16px;
+		}
+	}
+
+}
+@media (max-width: 768px){
+	.information-eth{
+		.row-exchange{
+			.exchange-top-item{
+				min-width: 50%;
+				max-width: 50%;
+			}
+		}
+	}
+	.header-main {
+		position: inherit;
+	}
+	.content {
+		padding-top: 0;
+	}
+}
+@media (max-width: 430px){
+	table {
+		overflow: scroll;
+	}
+	.information-eth{
+		.row-exchange{
+			.exchange-top-item{
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	.exchange-left-side td{
+		padding: 6px 0 0 6px!important;
+	}
+	.exchange-left-side-list .market-sell table{
+		min-height: auto;
+	}
+	.exchange-left-side table.exchange-left-side-up-down{
+		margin-top: 0;
+	}
+	.app-trade-mobile .trade-mobile .exchange-left-side-list .market-sell{
+		min-height: auto;
+		max-height: auto;
+	}
+	.exchange-left-side-list .market-buy table{
+		min-height: auto;
+	}
+	.header-app {
+	   padding: 6px 0;
+	}
+	.information-eth {
+		.nav-tabs li.nav-item {
+		    width: 33.3333%;
+	        border-bottom: 0;
+   			z-index: 1;
+		    a {
+		    	width: auto!important;
+		    	font-size: 11px!important;
+		    }
+		}
+	}
+	.information-eth table.table tr th {
+		padding: 10px 10px;
+		border-top: 0;
+	}
+	.information-eth table.table tr td {
+		padding: 10px 10px;
+	}
+	.header-main {
+		position: inherit;
+	}
+	.content {
+		padding-top: 0;
+	}
+	.trade-now {
+		background: #181b3c;
+	}
+	.market-page .exchange-list {
+		height: auto;
+	}
+	.dividends-page .banner-top {
+		background: #181b3c;
+		padding: 0;
+		.link-ref {
+			display: none;
+		}
+	}
+	.dividends-page .banner-top h1 {
+		font-size: 25px;
+		text-align: center;
+		margin-bottom: 0px;
+	}
+	.dividends-page .banner-top button.btn-outline-primary {
+		width: 100%;
+	}
+	.dividends-page .content-dividends .time {
+		margin-bottom: 15px;
+	}
+	.panigate ul.pagination li a {
+		width: 25px;
+		height: 25px;
+		font-size: 11px;
+	}
+	.dividend-rating-content .tabel table th img {
+		top: 3px;
+	}
+	.swap-ztr h2.title-home {
+		font-size: 32px;
+		line-height: 40px;
+	}
+	.why-invest .list-buid .item {
+		width: 100%;
+		margin-bottom: 16px;
+	}
+	#modal-swap .modal-info .address .tron-address, #modal-swap .modal-info .address .eth-address {
+		width: 100%;
+		margin-bottom: 16px;
+	}
+	#modal-swap .modal-info .transfer-address i {
+		font-size: 16px;
+	}
+	#modal-swap .modal-info .transfer-address .number-address p {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	#modal-swap .modal-info .button-area button.btn-modal {
+		margin-bottom: 16px;
+		width: 100%;
+	}
+	#modal-swap .modal-info .address {
+		margin-bottom: 0;
+	}
+	.swap-ztr .swap-area .content-swap .number input, .swap-ztr .swap-area .content-swap .number select {
+		font-size: 12px;
+	}
+	.swap-ztr .swap-area .content-swap .number label {
+		font-size: 10px;
+		line-height: 10px;
+	    margin: 0;
+	}
+	.swap-ztr .swap-area .content-swap .number .number-spen , .swap-ztr .swap-area .content-swap .number .name-money {
+		padding: 5px 16px ;
+	}
+	.swap-ztr .swap-area .content-swap .number .number-spen {
+		width: 55%;
+	}
+	.swap-ztr .swap-area .content-swap .number .name-money {
+		width: 45%;
+	}
+}

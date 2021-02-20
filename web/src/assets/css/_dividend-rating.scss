@@ -1,0 +1,179 @@
+.dividend-rating-page {
+    background: #E5E5E5;
+    height: 910px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.dividend-rating-top {
+    background: #181B3C;
+    height: 182px;
+    display: flex;
+    align-items: center;
+    .top-title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+        margin-bottom: 12px;
+
+        /* Primary / 9 */
+
+        color: #6F94F7;
+    }
+    .top-content {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+
+        /* White */
+
+        color: #FFFFFF;   
+    }
+}
+.dividend-rating-content {
+    margin-top: 16px;
+    .container {
+        padding: 0;
+    }
+    .general {
+        width: 70%;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 21px 16px!important;
+        border: 1px solid #e0e0e0;
+        border-bottom: 0;
+        border-top: 0;
+        background: #fff;
+    }
+    .daily-dividend-roi {
+        width: 30%;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 21px 16px!important;
+        background: #fff;
+    }
+    .dividend-roi-note  {
+        padding: 8px 16px;
+        background: #fff;
+    }
+    .tabel {
+            background: #fff;
+        table {
+            th,td {
+                border: 1px solid #e0e0e0;
+                padding: 5px 15px;
+                font-weight: 500;
+                font-size: 14px;
+            }
+            th {
+                color: #828282;
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 12px;
+                    right: 10px;
+                }
+                .left {
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: #828282;
+                    width: 75%;
+                }
+                .right {
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: #6F94F7;
+                    width: 100%;
+                    text-align: right;
+                    img {
+                        position: inherit;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .genaral {
+            border-bottom: 1px solid rgb(234, 236, 239);
+            .title {
+                font-size: 16px;
+                padding: 11px 16px;
+
+            }
+        }
+        .new-table {
+            padding: 6px 16px;
+            width: 100%;
+
+            .text-title {
+                width: 50%;
+                float: left;
+                color: rgb(118, 128, 143);
+                text-align: left;
+                font-size: 11px;
+            }
+            .number {
+                width: 50%;
+                float: right;
+                text-align: right;
+                font-size: 11px;
+            }
+        }
+    }
+}
+.dividend-roi-note {
+     border: 1px solid #e0e0e0;
+     border-top: 0;
+    .left {
+        width: 60%;
+    }
+    .right {
+        width: 40%;
+    }
+}
+.disclaimer-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:16px;
+    .disclaimer-icon {
+        width: 5%;
+        float: left;
+    }
+    .disclaimer-content {
+         width: 95%;
+        float: right;
+    }
+}
+@media (max-width: 430px){
+    .dividend-rating-content .general {
+        width: 50%;
+        font-size: 13px;
+    }
+    .dividend-rating-content .daily-dividend-roi {
+        width: 50%;
+        font-size: 13px;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .dividend-rating-content .tabel {
+        overflow: scroll;
+        table {
+            width: 1000px;
+        }
+    }
+    .disclaimer-note .disclaimer-icon {
+        width: auto;
+    }
+    .dividend-rating-top .top-content {
+        font-size: 13px;
+    }
+    .dividend-rating-top .top-title {
+        font-size: 20px;
+    }
+}

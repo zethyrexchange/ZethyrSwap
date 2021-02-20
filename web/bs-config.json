@@ -1,0 +1,14 @@
+{	
+	"injectChanges": false,
+	"logPrefix": "Zethyr",
+	"codeSync": false,
+	"open": false,
+	"notify": false,
+	"files" : "./src/**/*.{js, html, css}",
+    "port": 5678,
+    "ghostMode": false,
+    "server": {
+        "baseDir": ["./"]
+    },
+    "ui": false
+}
