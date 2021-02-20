@@ -13,3 +13,7 @@ Zethyr Swap Aggregator currently only supports liquidity from DEXes.
 
 # Future expansion
 To incorporate CEXes such as Binance, Huobi, Coinbase Pro, etc. into Zethyr Swap Aggregator.
+
+# Smart Contracts
+
+https://github.com/zethyrexchange/smart-contracts
