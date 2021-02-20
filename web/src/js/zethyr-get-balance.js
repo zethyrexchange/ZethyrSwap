@@ -24,19 +24,33 @@ export default {
     return self.CONTRACT_CALL_DATA;
   },
   async getBNBBalance() {
-    let _contract = this.CONTRACT_CALL_DATA;
-    if (!_contract) {
-      _contract = await this.initContract();
-    }
-    let _result = await _contract.methods.getBNBBalance(MyWeb3.getCurrentAddress()).call();
-    return parseFloatNumber(parseInt(_result) / 10 ** 18, 18);
+    let self = this;
+        try {
+            let _contract = this.CONTRACT_CALL_DATA;
+            if (!_contract) {
+              _contract = await this.initContract();
+            }
+            let _result = await _contract.methods.getBNBBalance(MyWeb3.getCurrentAddress()).call();
+            return parseFloatNumber(parseInt(_result) / 10 ** 18, 18);
+      } catch(e) {
+          await delay(1000);
+          return self.getBNBBalance();
+      }
+   
   },
   async getBEP20Balance(tokenAddr, tokenDecimal) {
-    let _contract = this.CONTRACT_CALL_DATA;
-    if (!_contract) {
-      _contract = await this.initContract();
+    let self = this;
+    try {
+        let _contract = this.CONTRACT_CALL_DATA;
+        if (!_contract) {
+          _contract = await this.initContract();
+        }
+        let _result = await _contract.methods.getBEP20Balance(tokenAddr, MyWeb3.getCurrentAddress()).call();
+        return parseFloatNumber(parseInt(_result) / 10 ** tokenDecimal, tokenDecimal);
+    } catch(e) {
+        await delay(1000);
+        return self.getBEP20Balance();
     }
-    let _result = await _contract.methods.getBEP20Balance(tokenAddr, MyWeb3.getCurrentAddress()).call();
-    return parseFloatNumber(parseInt(_result) / 10 ** tokenDecimal, tokenDecimal);
+    
   }
 }

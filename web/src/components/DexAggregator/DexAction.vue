@@ -269,37 +269,7 @@
 
                                 </div>    
                         </b-modal>
-                        <b-modal ref="modal-check-login" class="modal-unlock-2"  hide-footer hide-header>
-                            <div class="d-block">
-                                    <div class="header-modal clearfix">
-                                        <button type="button" aria-label="Close" class="close" @click="hideModalCheckLogin()"><img src="../../assets/images/exit.png"></button>
-                                        <h2 class="text-center">{{$t('message.network.errorCccurred')}}</h2>
-                                    </div>
-                                    <div class="modal-info">
-                                        <h6 class="text-center">{{$t('message.network.errorTronlinkCannot')}}</h6>
-                                    </div>
-                            </div>
-    				    </b-modal>
-                        <b-modal ref="modal-check-switch-node" class="modal-unlock-2"  hide-footer hide-header>
-                            <div class="d-block">
-                                <div class="header-modal clearfix">
-                                    <button type="button" aria-label="Close" class="close" @click="hideModalCheckSwitchNode()"><img src="../../assets/images/exit.png"></button>
-                                    <h2 class="text-center">{{$t('message.network.errorCccurred')}}</h2>
-                                </div>
-                                <div class="modal-info">
-                                    <h6 class="text-center">
-                                    <span>{{$t('message.network.errorTronlink')}}</span>
-                                    <span style="font-weight: bold">{{$t('message.network.errNodeName')}}</span>
-                                    <span style="font-weight: bold">{{$t('message.network.errNetwork')}}</span>
-                                    </h6>
-                                    <h6 class="text-center">
-                                    <span>{{$t('message.network.errorCurrently')}}</span>
-                                    <span style="font-weight: bold">{{$t('message.network.errorCurrentlyNodeName')}}</span>
-                                    <span>{{$t('message.network.errorNetworkInstead')}}</span>
-                                    </h6>
-                                </div>
-                            </div>		
-                        </b-modal>
+                       
                     </div>
                 </div>
             </b-col>
@@ -336,7 +306,7 @@ export default {
             customSlippageTolerance : 0.1,
             typeOfDex        : 0,
             fromTokenIdx     : 0,
-            toTokenIdx       : 1,
+            toTokenIdx       : 3,
             fromSwapAmount   : "",
             toSwapAmount     : '',
             fromSwapAmountRounded : "",
@@ -622,21 +592,6 @@ export default {
 			this.$refs['swap-modal'].hide();
         },
         
-		showModalCheckLogin(){
-        	this.$refs['modal-check-login'].show();
-      	},
-		hideModalCheckLogin() {
-			this.$refs['modal-check-login'].hide();
-		},
-		hideModalRegister() {
-        	this.$refs['modal-register'].hide();
-      	},
-		showModalCheckSwitchNode(){
-			this.$refs['modal-check-switch-node'].show();
-		},
-		hideModalCheckSwitchNode() {
-			this.$refs['modal-check-switch-node'].hide();
-		},
         getTokenListTo(tokenIdx){
             let tokenListTo   = SwapConfig.swapData[tokenIdx].to;
             return tokenListTo;

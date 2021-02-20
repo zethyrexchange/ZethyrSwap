@@ -23,9 +23,6 @@ const swapConfig = {
         '21': 2, // Token BEP20 to BNB
         '22': 3, // Token BEP20 to Token BEP20
     },
-    pairs: {
-        
-    },
     swapData : [ 
         {
             tokenName: 'BNB',
