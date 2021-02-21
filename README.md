@@ -38,5 +38,7 @@ node 14.8.0
 npm  7.5.2
 
 npm install
+
 BUILD: npm run build 
+
 DEV: npm run dev
