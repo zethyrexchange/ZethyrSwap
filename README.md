@@ -31,3 +31,12 @@ https://github.com/zethyrexchange/smart-contracts
 0xe76d9E3840EfD4b623a1bf075b30cd213B4aC914
 
 0x9D8769AB40A42ab04EaA1e031A070BdB6d4F8e42
+
+# Run
+
+node 14.8.0
+npm  7.5.2
+
+npm install
+BUILD: npm run build 
+DEV: npm run dev
