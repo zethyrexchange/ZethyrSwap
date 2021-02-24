@@ -8,6 +8,11 @@ export const abi = [
 			},
 			{
 				"internalType": "address",
+				"name": "_cBurgerSwapRouterAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
 				"name": "_cBakerySwapRouterAddr",
 				"type": "address"
 			}
@@ -19,7 +24,7 @@ export const abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "cBSwapRouter",
+		"name": "cBakerySwapRouter",
 		"outputs": [
 			{
 				"internalType": "contract IBakerySwapRouter",
@@ -34,7 +39,22 @@ export const abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "cPSwapRouter",
+		"name": "cBurgerSwapRouter",
+		"outputs": [
+			{
+				"internalType": "contract IBurgerSwapRouter",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "cPancakeSwapRouter",
 		"outputs": [
 			{
 				"internalType": "contract IPancakeSwapRouter",
@@ -63,9 +83,9 @@ export const abi = [
 		"name": "getAmountsIn",
 		"outputs": [
 			{
-				"internalType": "uint256[4]",
+				"internalType": "uint256[6]",
 				"name": "_data",
-				"type": "uint256[4]"
+				"type": "uint256[6]"
 			}
 		],
 		"payable": false,
@@ -89,9 +109,24 @@ export const abi = [
 		"name": "getAmountsOut",
 		"outputs": [
 			{
-				"internalType": "uint256[4]",
+				"internalType": "uint256[6]",
 				"name": "_data",
-				"type": "uint256[4]"
+				"type": "uint256[6]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "version",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
 			}
 		],
 		"payable": false,

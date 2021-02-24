@@ -9,11 +9,12 @@ import DexAggregatorContainer from '../containers/DexAggregator'
 Vue.use(Router)
 
 const HomeRoute  = { path: '/', name: 'home', component: DexAggregatorContainer, meta: { title: 'Dex Aggregator | Zethyr Swap' } };
-
+const SwapRoute  = { path: '/:fromToken/:toToken', name: 'swapDetail', component: DexAggregatorContainer, meta: { title: 'Dex Aggregator | Zethyr Swap' } };
 
 const routes = [
   // StableRoute,
-  HomeRoute
+  HomeRoute,
+  SwapRoute
 ];
 const router = new Router({
   // mode: 'history', // require service support

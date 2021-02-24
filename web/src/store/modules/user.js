@@ -69,6 +69,7 @@ const User = {
 				return true;
 			}
 			isLoading[pairOfSwap] = true;
+			
 			try {
 				let data = await cZSwapInfo.getAmountsOut(amountIn, path, inTokenDecimal, outTokenDecimal);
 				let swapDexListConfig         = SwapConfig.dexListConfig;
@@ -90,8 +91,7 @@ const User = {
 					dexListByPair[pairOfSwap].push(options);
 				});
 
-				dexListByPair[pairOfSwap] = UtilArray.sortArray(dexListByPair[pairOfSwap], pairOfSwap, false);
-
+				dexListByPair[pairOfSwap] = UtilArray.sortArray(dexListByPair[pairOfSwap], 'sPrice', false);
 				// set type of dex default
 				if (isFirstTimeLoading[pairOfSwap] == true) {
 					let typeOfDexDefault = dexListByPair[pairOfSwap][0] ? dexListByPair[pairOfSwap][0].typeOfDex : 0;

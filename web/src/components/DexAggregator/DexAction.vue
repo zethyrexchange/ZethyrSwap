@@ -18,23 +18,52 @@
                                     <b-col cols="4" md="2"></b-col>
                                 </b-row>
                             </div>
-                            <div class="dex_arregator_detail" v-for="(item, idx) in dexList">
+                             <div class="dex_arregator_detail" v-if="getDexMatch()">
                                 <b-row align-v="center">
-                                    <b-col cols="1" md="1" class="pr-0"><div class="logo-dex"><img :src="require(`../../assets/images/icon-swap-${item.typeOfDex}.png`)" :alt="item.dexName" /></div></b-col>
+                                    <b-col cols="1" md="1" class="pr-0"><div class="logo-dex"><img :src="require(`../../assets/images/zethyr-swap-logo.png`)" alt="zethyrswap" /></div></b-col>
                                     <b-col cols="4" md="3">
-                                        {{item.dexName}}
-                                        <div class="d-block d-md-none"><span class="green">{{ numberWithCommas(getSwapPrice(item.sPrice), 6) }}</span></div>
+                                        Zethyr Swap
+                                        <div class="d-block d-md-none"><span class="green">{{ numberWithCommas(getSwapPrice(getDexMatch().sPrice), 6) }}</span></div>
                                     </b-col>
-                                    <b-col cols="4" md="3" class="d-none d-md-block"><span class="green">{{ numberWithCommas(getSwapPrice(item.sPrice), 6) }}</span></b-col>
-                                    <b-col cols="3" md="2"><span :class="{ green: idx == 1, red: idx > 1, best: idx == 0 }">{{ getDiff(item, idx) }}</span></b-col>
+                                    <b-col cols="4" md="3" class="d-none d-md-block"><span class="green">{{ numberWithCommas(getSwapPrice(getDexMatch().sPrice), 6) }}</span></b-col>
+                                    <b-col cols="3" md="2"><span class="best">BEST</span></b-col>
+                                </b-row>
+                            </div>
+                            <div class="dex_arregator_detail" v-if="getDexMatch()">
+                                <b-row align-v="center">
+                                    <b-col cols="1" md="1" class="pr-0"><div class="logo-dex"><img :src="require(`../../assets/images/icon-swap-${getDexMatch().typeOfDex}.png`)" :alt="getDexMatch().dexName" /></div></b-col>
+                                    <b-col cols="4" md="3">
+                                        {{ getDexMatch().dexName}}
+                                        <div class="d-block d-md-none"><span class="green">{{ numberWithCommas(getSwapPrice(getDexMatch().sPrice), 6) }}</span></div>
+                                    </b-col>
+                                    <b-col cols="4" md="3" class="d-none d-md-block"><span class="green">{{ numberWithCommas(getSwapPrice(getDexMatch().sPrice), 6) }}</span></b-col>
+                                    <b-col cols="3" md="2"><span class="green">Match</span></b-col>
                                     <b-col cols="4" md="2" class="d-flex justify-content-center">
-                                        <label class="switch">
-                                            <input type="radio" :value="item.typeOfDex" v-model="typeOfDex">
+                                        <label class="switch checked"> 
+                                            <input type="checkbox" value="getDexMatch().typeOfDex" @change.prevent="ignoreDexMatch">
                                             <span class="slider round"></span>
                                         </label>
                                     </b-col>
                                 </b-row>
                             </div>
+                            <div class="dex_arregator_detail" v-for="(item, idx) in dexList">
+                                <b-row align-v="center">
+                                    <b-col cols="1" md="1" class="pr-0"><div class="logo-dex"><img :src="require(`../../assets/images/icon-swap-${item.typeOfDex}.png`)" :alt="item.dexName" /></div></b-col>
+                                    <b-col cols="4" md="3">
+                                        {{item.dexName}}
+                                        <div class="d-block d-md-none"><span :class="{ 'ignore-color': isDexIgnore(item.typeOfDex), green: !isDexIgnore(item.typeOfDex) }">{{ numberWithCommas(getSwapPrice(item.sPrice), 6) }}</span></div>
+                                    </b-col>
+                                    <b-col cols="4" md="3" class="d-none d-md-block"><span :class="{ 'ignore-color': isDexIgnore(item.typeOfDex), green: !isDexIgnore(item.typeOfDex) }">{{ numberWithCommas(getSwapPrice(item.sPrice), 6) }}</span></b-col>
+                                    <b-col cols="3" md="2"><span :class="{ 'ignore-color': isDexIgnore(item.typeOfDex), red: getDiff(item) < 0 }">{{ getDiff(item) }} %</span></b-col>
+                                    <b-col cols="4" md="2" class="d-flex justify-content-center">
+                                        <label class="switch" :class="{ checked: !isDexIgnore(item.typeOfDex)}">
+                                            <input type="checkbox" :value="item.typeOfDex" v-model="activeTypeOfDexList">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </b-col>
+                                </b-row>
+                            </div>
+                    
                         </div>                       
                     </div>
                 </div>
@@ -182,17 +211,14 @@
                                                 <div><strong>{{getDexDetailByPair().dexName}}</strong></div>
                                             </b-col>
                                         </b-row>
-                                        <b-row v-if="typeOfDex == 0">
+                                        <b-row>
                                             <b-col><div class="swap-process-label">Minimum received</div></b-col>
                                             <b-col class="text-right">{{ numberWithCommas(this.toSwapAmount * (1 - this.slippageTolerance), 6) }} {{ getToTokenName()}}</b-col>
                                         </b-row>
                                     </div>
                                     <div class="mb-3 d-flex swap-confirm-description">
                                         <img src="../../assets/images/error_outline.png" class="mr-2" />
-                                        <div class="order-confirm-description" v-if="typeOfDex == 1">
-                                            Output is estimated. You will receive at least {{numberWithCommas(toSwapAmountRounded , 6)}} {{getToTokenName()}} or the transaction will revert. Please make sure you have enough energy and banwidth, or the transaction may fail.
-                                        </div>
-                                         <div class="order-confirm-description" v-if="typeOfDex == 0">
+                                         <div class="order-confirm-description">
                                             Output is estimated. You will receive at least {{ numberWithCommas(this.toSwapAmount * (1 - this.slippageTolerance), 6)}} {{getToTokenName()}} or the transaction will revert. Please make sure you have enough energy and banwidth, or the transaction may fail.
                                         </div>
                                     </div>
@@ -282,6 +308,7 @@
 import { mapActions , mapGetters } from 'vuex';
 import UtilFormatNumber from '../../utils/format';
 import UtilFormat from '../../utils/convertTime.js';
+import UtilArray from '../../utils/handleArray.js';
 import { parseFloatNumber } from "./../../utils/convert.util";
 import SwapConfig from './../../../../config/swap.config.js';
 
@@ -304,7 +331,9 @@ export default {
             swapListFrom     : SwapConfig.tokenList,
             slippageTolerance: 0.001,
             customSlippageTolerance : 0.1,
-            typeOfDex        : 0,
+            activeTypeOfDexList  : [0, 1, 2],
+            typeOfDex     : 0,
+            typeOfDexSwap     : -1,
             fromTokenIdx     : 0,
             toTokenIdx       : 3,
             fromSwapAmount   : "",
@@ -355,6 +384,9 @@ export default {
                 this.loadData();
             }
         },
+        toSwapAmount: function(val) {
+            this.initDexList();
+        },
         toTokenIdx: function(val) {
             this.getAmountFromTo = true;
             this.getAmountToFrom = false;
@@ -378,6 +410,9 @@ export default {
         },
         userAccountBalance: function(val) {
             this._validateAmountInput();
+        },
+        $route (to, from){
+           this.initPairData();
         }
     },
     computed: {
@@ -408,6 +443,7 @@ export default {
         }
     },
     mounted(){
+        this.initPairData();
         this.onAccountChange();
         this.makeJqueryEvent();
         this.loadData();
@@ -423,6 +459,11 @@ export default {
 			'initDexInfo',
             'initOrdersHistory'
 		]),
+        redirectToSwapDetail(){
+            let fromToken  = this.getFromTokenName();
+            let toToken    = this.getToTokenName();
+            this.$router.push({ name : 'swapDetail', params: { fromToken : fromToken, toToken : toToken } });
+        },
         redirectToTransactionLink(transactionId){
             if(transactionId == '') return false;
             let transactionLink =  `https://bscscan.com/tx/${transactionId}`;
@@ -431,16 +472,13 @@ export default {
         getSwapPrice(sPrice) {
             return sPrice;
         },
-        getDiff(dex, idx) {
+        getDiff(dex) {
             let diff = dex ? dex.diff : 0;
-            if (idx == 0) {
-                diff = 'BEST';
+            let dexMatch = this.getDexMatch();
+            if (!dexMatch || !dex) {
+                return 0;
             }
-            // if (idx == 1) {
-            //     diff = 'Match';
-            // }
-
-            return diff;
+            return parseFloat(this.numberWithCommas((dex.sPrice - dexMatch.sPrice) * 100 / dexMatch.sPrice, 2));
         },
         async getUserBalanceByToken(){
             let fromTokenIdx       = this.fromTokenIdx ? this.fromTokenIdx : 0;
@@ -464,7 +502,7 @@ export default {
             return this.isLoadUserBalanceOfFromAsset;
         },
         getDexDetailByPair(){
-            let typeOfDex       = this.typeOfDex;
+            let typeOfDex       = this.typeOfDexSwap;
             let dexListConfig   = SwapConfig.dexListConfig;
             let dexDetail       = dexListConfig[typeOfDex];
             if(!dexDetail) {
@@ -474,7 +512,7 @@ export default {
             }
         },
         getContractZSwapAddr() {
-            let typeOfDex       = this.typeOfDex;
+            let typeOfDex       = this.typeOfDexSwap;
             let dexListConfig   = SwapConfig.dexListConfig;
             let dexDetail       = dexListConfig[typeOfDex];
             if(!dexDetail) {
@@ -544,7 +582,6 @@ export default {
             ); 
         },
         _reloadAmountEstimate() {
-            let typeOfDex = this.typeOfDex;
             if(this.getAmountFromTo == true) {
                 this.getAmountOut();               
             } else  if(this.getAmountToFrom == true) {
@@ -577,6 +614,7 @@ export default {
         },
         showModalSwap() {
             let self      = this;
+            this.typeOfDexSwap = this.getTypeOfDexMatch();
             this.swapProcessStatus   = null;
             this.approvalProcessStatus   = 0;
             if (this.validateCreateSwapOrder(true) == false) {
@@ -587,6 +625,7 @@ export default {
         hideModalSwap() {
             this.swapProcessStatus   = null;
             this.approvalProcessStatus   = 0;
+            this.typeOfDexSwap   = -1;
             this.approveHash      = "";
             this.swapTransactionHash = "";
 			this.$refs['swap-modal'].hide();
@@ -615,6 +654,10 @@ export default {
 
                     this.value                 = this.value.match(REGEX_PRICE)[0];
                     self.fromSwapAmountRounded = this.value;
+
+                    if (!self.fromSwapAmountRounded || self.fromSwapAmountRounded == '') {
+                        self._resetSwapAmount();
+                    }
                 });
             }  
             function makeEventChangeSwapAmountTo(){
@@ -624,8 +667,18 @@ export default {
 
                     this.value                        = this.value.match(REGEX_PRICE)[0];
                     self.toSwapAmountRounded          = this.value;
+                
+                    if (!self.toSwapAmountRounded || self.toSwapAmountRounded == '') {
+                        self._resetSwapAmount();
+                    }
                 });
             } 
+        },
+        _resetSwapAmount() {
+            this.toSwapAmountRounded = '';
+            this.fromSwapAmountRounded = '';
+            this.toSwapAmount        = '';
+            this.fromSwapAmount      = '';
         },
         _validateAmountInput() {
             let self = this;
@@ -667,7 +720,20 @@ export default {
             }
             return true;
         },
+        initPairData(){
+            let fromTokenName       = this.$route.params.fromToken; 
+            let toTokenName         = this.$route.params.toToken; 
+            if(!fromTokenName || !toTokenName ) {
+                this.fromTokenIdx  = 0;
+                this.toTokenIdx    = 3
+            } else {
+                let fromTokenIdx        = Object.keys(SwapConfig.tokenList).find(key => SwapConfig.tokenList[key] === fromTokenName);
+                let toTokenIdx          = Object.keys(SwapConfig.tokenList).find(key => SwapConfig.tokenList[key]  === toTokenName);
 
+                this.fromTokenIdx  = fromTokenIdx;
+                this.toTokenIdx    = toTokenIdx;
+            }
+        },
         reloadData() {
             let self = this;
 		    this.iReloadDataID = setInterval(() => {
@@ -677,7 +743,6 @@ export default {
         loadData() {
             this.initDexList();
             this.getUserBalanceByToken();
-            let typeOfDex       = this.typeOfDex;
             let getAmountFromTo = this.getAmountFromTo;
             let getAmountToFrom = this.getAmountToFrom;
             if (getAmountFromTo == true) {
@@ -726,6 +791,7 @@ export default {
             setTimeout(function(){ 
                 self.fromTokenIdx = toTokenIdx;
                 self.isChangePair = false;
+                self.redirectToSwapDetail();
             }, 100);
         },
         onChangeToToken(e){
@@ -734,6 +800,7 @@ export default {
 
             this.messageError.AmountFrom.text   = '';
             this.messageError.AmountTo.text = '';
+            this.redirectToSwapDetail();
         },
         onChangeFromToken(e){
             this.messageError.AmountFrom.status = false;
@@ -741,6 +808,7 @@ export default {
 
             this.messageError.AmountFrom.text   = '';
             this.messageError.AmountTo.text = '';
+            this.redirectToSwapDetail();
         },
         getPercentFilled(orderDetail) {
             if (
@@ -770,7 +838,7 @@ export default {
         async getAmountOut() {
             let self = this;
             let tokensSold      = this.fromSwapAmountRounded && this.fromSwapAmountRounded != '' ? this.fromSwapAmountRounded : 0;
-            let typeOfDex       = this.typeOfDex;
+            let typeOfDex       = this.getTypeOfDexMatch();
             let fromTokenIdx    = this.fromTokenIdx;
             let toTokenIdx      = this.toTokenIdx;
             let tokenFromDetail = this.getTokenDetail(fromTokenIdx);
@@ -798,7 +866,7 @@ export default {
          async getAmountIn() {
             let self             = this;
             let tokensBought     = this.toSwapAmountRounded && this.toSwapAmountRounded != '' ? this.toSwapAmountRounded : 0;
-            let typeOfDex        = this.typeOfDex;
+            let typeOfDex        = this.getTypeOfDexMatch();
             let fromTokenIdx     = this.fromTokenIdx;
             let toTokenIdx       = this.toTokenIdx;
 
@@ -827,8 +895,8 @@ export default {
         },
         handleCreateSwapOrder() {
             this.swapProcessStatus = 1;
-            let typeOfDex       = this.typeOfDex;
-            if (typeOfDex == 0 || typeOfDex == 1) {
+            let typeOfDex      = this.typeOfDexSwap;
+            if (typeOfDex != -1) {
                 this._handleCreateUniswapOrder(typeOfDex);
             } 
         },
@@ -1021,6 +1089,18 @@ export default {
                 console.log(e);
             }
         },
+        ignoreDexMatch() {
+            let activeTypeOfDexList = this.activeTypeOfDexList ? this.activeTypeOfDexList : [];
+            let dexMatch = this.getDexMatch();
+            if (!dexMatch) {
+                return false;
+            }  
+            if (activeTypeOfDexList.length <= 1) {
+                return false;
+            }
+            activeTypeOfDexList = activeTypeOfDexList.filter(item => item != dexMatch.typeOfDex);
+            this.activeTypeOfDexList = activeTypeOfDexList;
+        },
         getPathOfSwap(fromTokenDetail, toTokenDetail) {
             let data = [];
             if (fromTokenDetail && toTokenDetail) {
@@ -1029,14 +1109,14 @@ export default {
             return data;
         },
         getUnitPriceTo() {
-            let typeOfDex = this.typeOfDex;
+            let typeOfDex = this.typeOfDexSwap;
             let dexList = this.getDexList();
             let dexDetail = dexList[typeOfDex] ? dexList[typeOfDex] : null;
             let price = dexDetail ? dexDetail.sPrice : 0;
             return price;
         },
         getUnitPriceFrom() {
-            let typeOfDex = this.typeOfDex;
+            let typeOfDex = this.typeOfDexSwap;
             let dexList = this.getDexList();
             let dexDetail = dexList[typeOfDex] ? dexList[typeOfDex] : null;
             let price = dexDetail ? dexDetail.reversePrice : 0;
@@ -1049,7 +1129,46 @@ export default {
             return SwapConfig.pairs[`${this.fromTokenIdx}${this.toTokenIdx}`];
         },
         getDexList() {
-            return this.dexListByPair && this.dexListByPair[this.getPairOfSwap()] ? this.dexListByPair[this.getPairOfSwap()] : [];
+            let typeOfDexMatch = this.getTypeOfDexMatch();
+            let data = this.dexListByPair && this.dexListByPair[this.getPairOfSwap()] ? this.dexListByPair[this.getPairOfSwap()] : [];
+            let newData = [];
+            data.forEach(item => {
+                if (item.typeOfDex != typeOfDexMatch) {
+                    newData.push(item);
+                } 
+            });
+            newData = UtilArray.sortArray(newData, 'sPrice', false);
+            // data = [...activeList, ...ignoreList];
+            // return data;
+            return newData;
+        },
+        getTypeOfDexMatch() {
+           let dexMatch = this.getDexMatch();
+           return dexMatch ? dexMatch.typeOfDex : -1;
+        },
+        getDexMatch() {
+            let activeTypeOfDexList = this.activeTypeOfDexList ? this.activeTypeOfDexList : [];
+            let typeOfDexSwap = this.typeOfDexSwap;
+            
+            let data = this.dexListByPair && this.dexListByPair[this.getPairOfSwap()] ? this.dexListByPair[this.getPairOfSwap()] : [];
+            let activeList = [];
+            for (let idx = 0; idx < data.length; idx++) {
+                if (typeOfDexSwap != -1) {
+                    if (data[idx] && data[idx].typeOfDex == typeOfDexSwap) {
+                        activeList.push(data[idx]);
+                        break;
+                    }
+                } else if (data[idx] && activeTypeOfDexList.indexOf(data[idx].typeOfDex) >= 0) {
+                    activeList.push(data[idx]);
+                    break;
+                }
+            }
+
+            return activeList[0];
+        },
+        isDexIgnore(typeOfDex) {
+            let activeTypeOfDexList = this.activeTypeOfDexList ? this.activeTypeOfDexList : [];
+            return activeTypeOfDexList.indexOf(typeOfDex) < 0;
         },
         isShowMessageError(){
             let toSwapAmountRounded     = this.toSwapAmountRounded;
